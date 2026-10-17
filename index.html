@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dot Awkward</title>
+<meta name="description" content="Small games for odd moments. Phone games by Dot Awkward that install from your browser, work offline and never show ads.">
+<meta property="og:title" content="Dot Awkward">
+<meta property="og:description" content="Small games for odd moments: Small Plates and Sprout.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dotawkward.github.io/">
+<meta name="theme-color" content="#f2f1f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121119" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='34' cy='36' r='22' fill='%23ff5d3a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a single column studio page — the wordmark with its off-kilter dot, one line about the studio, then a card per game and how to install. */
+:root {
+  --bg: #f2f1f6;
+  --surface: #ffffff;
+  --ink: #1c1a27;
+  --muted: #615d72;
+  --line: #dcd9e5;
+  --dot: #ff5d3a;
+  --plates: #2c5aa0;
+  --sprout: #2f6b45;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121119; --surface: #1c1a26; --ink: #eceaf3; --muted: #a39eb6; --line: #2e2b3b;
+    --dot: #ff7556; --plates: #6c97da; --sprout: #6fb784;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 var(--font-body);
+}
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--dot); outline-offset: 3px; border-radius: 6px; }
+
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+/* Wordmark: the dot sits a little too low and a little too far, on purpose. */
+header { padding-top: max(28px, env(safe-area-inset-top, 0px)); }
+.mark {
+  display: inline-flex; align-items: flex-end; gap: 0;
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.6rem, 5vw, 2rem); letter-spacing: -0.03em; line-height: 1;
+  text-decoration: none;
+}
+.mark .dot {
+  width: 0.42em; height: 0.42em; border-radius: 50%;
+  background: var(--dot);
+  margin-left: 0.14em;
+  transform: translateY(0.16em) rotate(8deg);
+  transition: transform .35s cubic-bezier(.3, 1.6, .5, 1);
+}
+.mark:hover .dot { transform: translate(0.08em, 0.02em) scale(1.15); }
+
+.hero { padding-block: clamp(40px, 9vw, 88px) clamp(28px, 6vw, 56px); max-width: 40rem; }
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2.4rem, 8vw, 4.2rem); line-height: 0.98; letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.hero h1 .odd { display: inline-block; transform: rotate(-3deg) translateY(0.04em); color: var(--dot); }
+.hero p { margin: 18px 0 0; font-size: 1.12rem; color: var(--muted); max-width: 34rem; }
+
+.label {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  margin: 0 0 14px;
+}
+
+/* Games */
+.games { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px; }
+.game {
+  --c: var(--plates);
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px 18px;
+  align-content: start;
+  min-width: 0;
+}
+.game.sprout { --c: var(--sprout); }
+.game img {
+  width: 84px; height: 84px; border-radius: 22%;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--c) 30%, transparent);
+  display: block;
+}
+.game-head { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.game h2 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em; line-height: 1.1; }
+.game .kind { color: var(--c); font-weight: 700; font-size: 0.92rem; }
+.game p { grid-column: 1 / -1; margin: 0; color: var(--ink); }
+.chips { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.chips li {
+  font-size: 0.8rem; font-weight: 600; padding: 4px 10px; border-radius: 999px;
+  background: color-mix(in srgb, var(--c) 11%, transparent); color: var(--ink);
+}
+.play {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  padding-top: 4px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--c); color: #fff;
+  font-weight: 700; text-decoration: none;
+  padding: 12px 20px; border-radius: 999px;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px color-mix(in srgb, var(--c) 35%, transparent); }
+.btn svg { width: 16px; height: 16px; }
+.play small { color: var(--muted); font-size: 0.82rem; }
+@media (prefers-color-scheme: dark) { .btn { color: #10131a; } }
+
+/* Install */
+.install { margin-top: clamp(40px, 8vw, 72px); }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+.steps div { border-top: 2px solid var(--line); padding-top: 12px; }
+.steps h3 { margin: 0 0 6px; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
+.steps ol { margin: 0; padding-left: 1.2em; color: var(--muted); display: flex; flex-direction: column; gap: 3px; }
+.steps strong { color: var(--ink); font-weight: 600; }
+
+footer {
+  margin-top: clamp(48px, 10vw, 96px);
+  padding-block: 22px max(28px, env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px;
+  color: var(--muted); font-size: 0.9rem;
+}
+footer p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mark .dot, .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="mark" href="./" aria-label="Dot Awkward home">Dot Awkward<span class="dot" aria-hidden="true"></span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Small games for <span class="odd">odd</span> moments.</h1>
+      <p>Little phone games for the few spare minutes you didn't plan for: waiting on dinner, a long line, the couch. They install from your browser, work offline, and never show ads.</p>
+    </section>
+
+    <section aria-labelledby="games-label">
+      <h2 class="label" id="games-label">The games</h2>
+      <div class="games">
+        <article class="game plates">
+          <img src="https://dotawkward.github.io/small-plates/icons/icon-512.png" alt="" width="84" height="84">
+          <div class="game-head">
+            <h2>Small Plates</h2>
+            <span class="kind">A word game for one or two</span>
+          </div>
+          <p>Plate letters one at a time, serve words, and keep turning each one into the next course: TIN, TINE, TILE, TILED. Play alone, pass the phone across the table, or take on the Daily Table.</p>
+          <ul class="chips">
+            <li>Word game</li><li>1 or 2 players</li><li>New Daily Table every day</li>
+          </ul>
+          <div class="play">
+            <a class="btn" href="small-plates/">Play Small Plates
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <small>Free · works offline</small>
+          </div>
+        </article>
+
+        <article class="game sprout">
+          <img src="https://dotawkward.github.io/plant-app-site/icons/icon-512.png" alt="" width="84" height="84">
+          <div class="game-head">
+            <h2>Sprout</h2>
+            <span class="kind">Keep real houseplants alive</span>
+          </div>
+          <p>Collect and care for twenty real houseplant species, each behaving the way it does in a real home. Learn light, water and roots by looking after them, with a field guide that explains what just happened.</p>
+          <ul class="chips">
+            <li>Plant care</li><li>20 real species</li><li>Field guide</li>
+          </ul>
+          <div class="play">
+            <a class="btn" href="plant-app-site/">Play Sprout
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <small>Free · works offline</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="install" aria-labelledby="install-label">
+      <h2 class="label" id="install-label">Put a game on your home screen</h2>
+      <div class="steps">
+        <div>
+          <h3>iPhone or iPad</h3>
+          <ol>
+            <li>Open the game in <strong>Safari</strong>.</li>
+            <li>Tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Android</h3>
+          <ol>
+            <li>Open the game in <strong>Chrome</strong>.</li>
+            <li>Tap <strong>⋮</strong>, then <strong>Install app</strong>.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>No ads, no accounts, no tracking. Your progress stays on your phone.</p>
+    <p>© 2026 Dot Awkward · <a href="https://github.com/DotAwkward">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
