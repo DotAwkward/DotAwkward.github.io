@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy · Dot Awkward</title>
+<meta name="description" content="How Dot Awkward's games handle your information: they don't collect any.">
+<meta name="theme-color" content="#f2f1f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121119" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="../kit/studio-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<style>
+:root {
+  --bg: #f2f1f6; --surface: #ffffff; --ink: #1c1a27; --muted: #615d72; --line: #dcd9e5; --dot: #ff5d3a;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #121119; --surface: #1c1a26; --ink: #eceaf3; --muted: #a39eb6; --line: #2e2b3b; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--font-body); }
+.wrap {
+  max-width: 720px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+  padding-block: max(28px, env(safe-area-inset-top, 0px)) max(48px, env(safe-area-inset-bottom, 0px));
+}
+.mark { display: inline-block; color: var(--ink); line-height: 0; }
+.mark img { height: 1.9rem; width: auto; }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 7vw, 2.8rem); line-height: 1.02; letter-spacing: -0.03em; margin: 40px 0 8px; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.01em; margin: 34px 0 8px; }
+p, li { max-width: 62ch; }
+.updated { color: var(--muted); margin: 0; }
+.short {
+  background: var(--surface); border-radius: 18px; padding: 18px 20px; margin-top: 24px;
+  border-left: 0;
+}
+.short p { margin: 0; }
+.short strong { color: var(--dot); }
+ul { padding-left: 1.2em; }
+li + li { margin-top: 6px; }
+a { color: inherit; text-decoration-color: var(--dot); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--dot); outline-offset: 3px; border-radius: 4px; }
+footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="mark" href="../" aria-label="Dot Awkward home"><img src="../kit/logo-dark-ink.svg" alt="Dot Awkward"></a>
+
+  <h1>Privacy</h1>
+  <p class="updated">Last updated October 17, 2026</p>
+
+  <div class="short">
+    <p><strong>The short version:</strong> Dot Awkward's games don't collect anything about you. There are no accounts, no analytics and no tracking. Your games, scores and settings stay on your phone.</p>
+  </div>
+
+  <h2>What this covers</h2>
+  <p>This policy covers the games made by Dot Awkward, <a href="../small-plates/">Small Plates</a> and <a href="../plant-app-site/">Potting Bench</a>, in their web versions and their Android apps, plus the Dot Awkward website.</p>
+
+  <h2>What we collect</h2>
+  <p>Nothing. The games don't send any information to Dot Awkward or to anyone else. They don't ask for an account, an email address or your location, and they don't include analytics or advertising code.</p>
+
+  <h2>What stays on your phone</h2>
+  <p>To remember your progress, the games save a few things in your phone's own storage:</p>
+  <ul>
+    <li>Your games in progress, scores, stats and streaks.</li>
+    <li>Any player names you type in, such as the two names in a game of Small Plates for two.</li>
+    <li>Your settings, like sound, vibration and light or dark mode.</li>
+    <li>In Potting Bench, your garden and the plants you're caring for.</li>
+  </ul>
+  <p>This information never leaves your phone unless you move it yourself. Deleting the app, or clearing the website's data in your browser, erases it.</p>
+
+  <h2>Moving and sharing</h2>
+  <ul>
+    <li><strong>Transfer codes and backups.</strong> Small Plates' "Move your games" code and Potting Bench's backup file contain your saved progress. They only go where you copy, paste or save them.</li>
+    <li><strong>Sharing a result.</strong> When you share a Daily Table result, your phone's share menu sends exactly the text you see to the app and person you choose. Dot Awkward doesn't see it.</li>
+  </ul>
+
+  <h2>Services we rely on</h2>
+  <ul>
+    <li><strong>GitHub Pages</strong> hosts the websites. Like any web host, it may log basic technical information, such as your IP address, to keep the service running and secure. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
+    <li><strong>Google Fonts</strong> supplies the lettering on the Dot Awkward website, so your browser contacts Google when you visit it. The games themselves carry their own fonts. See <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+    <li><strong>Google Play</strong> handles downloading the Android apps and any purchases, under <a href="https://policies.google.com/privacy">Google's privacy policy</a>. Dot Awkward doesn't receive your payment details.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>The games are made for a general audience and aren't directed at children under 13. Because they don't collect personal information, we don't knowingly collect any from children.</p>
+
+  <h2>If this changes</h2>
+  <p>If a game ever adds something like optional rewarded ads, which you'd choose to watch for an in-game bonus, or in-app purchases, we'll update this page before that version comes out and explain exactly what any outside service receives. Dot Awkward games won't show pop-up ads or ads that interrupt play.</p>
+
+  <h2>Questions</h2>
+  <p>Email <a href="mailto:hello@dotawkward.com">hello@dotawkward.com</a>.</p>
+
+  <footer>© 2026 Dot Awkward · <a href="../">dotawkward.github.io</a></footer>
+</div>
+</body>
+</html>
