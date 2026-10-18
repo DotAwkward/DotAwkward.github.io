@@ -7,8 +7,8 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Change this one line when the site moves to dotawkward.com.
-const SITE = "https://dotawkward.github.io";
+// The site's public address, used for share previews and canonical links.
+const SITE = "https://dotawkward.com";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const logo = readFileSync(join(here, "src/logo.svg"), "utf8").trim();
