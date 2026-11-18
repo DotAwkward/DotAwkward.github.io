@@ -116,6 +116,9 @@ h1, h2, h3 { text-wrap: balance; }
 .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px color-mix(in srgb, var(--c) 35%, transparent); }
 .btn svg { width: 16px; height: 16px; }
 .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+/* Google's official badge: the PNG has clear space around it, so pull it in to line up with the buttons. */
+.play-badge { display: inline-block; line-height: 0; border-radius: 8px; }
+.play-badge img { height: 68px; width: auto; margin: -11px; }
 .btn.ghost:hover { box-shadow: inset 0 0 0 2px var(--c); }
 .note { color: var(--muted); font-size: 0.85rem; }
 
